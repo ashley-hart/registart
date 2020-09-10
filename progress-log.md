@@ -8,3 +8,4 @@
  - NOTE: Think about what workflow model you'd like to follow 
  - Attended TA Review session on Deliverables 1 assignment. 
  - Worked on ConOps deliverable
+ - Remiplmented some lot HTML/CSS progress
