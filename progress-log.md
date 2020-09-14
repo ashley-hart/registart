@@ -9,3 +9,10 @@
  - Attended TA Review session on Deliverables 1 assignment. 
  - Worked on ConOps deliverable
  - Remiplmented some lost HTML/CSS progress
+
+#### September 11th, 2020
+ - Created Gantt chart.
+ - Started a development tutorial for the MERN stack.
+ 
+#### September 9th, 2020
+ - Updated doumentation for Deliverables 1.
