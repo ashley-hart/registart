@@ -1,38 +1,31 @@
+/*
+CSS HEX
+--rich-black-fogra-39: #0c0a09ff;
+--cobalt-blue: #0244a1ff;
+--bluetiful: #0266f2ff;
+--dodger-blue: #4894feff;
+--white: #ffffffff;
+
+CSS HSL 
+--rich-black-fogra-39: hsla(20, 14%, 4%, 1);
+--cobalt-blue: hsla(215, 98%, 32%, 1);
+--bluetiful: hsla(215, 98%, 48%, 1);
+--dodger-blue: hsla(215, 99%, 64%, 1);
+--white: hsla(0, 0%, 100%, 1);
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  height: 100vh;
+  background-color:  #0a1128ff;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* color: white; */
 }
