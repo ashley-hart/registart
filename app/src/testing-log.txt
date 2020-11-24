@@ -1,0 +1,7 @@
+REGISTART TESTING LOG
+========================
+Tester Name: Noemi Garcia
+Describe the conditions under which you found the bug (be specific): "I was 
+submitting my information into the appointment form on the homepage and I was not stopped when
+I left the E-mail field blank."
+Bug-Fix Suggestions: "The developer should revise the form code."

@@ -13,7 +13,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* I don't know why this is here. */
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

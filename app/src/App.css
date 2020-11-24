@@ -4,6 +4,7 @@ CSS HEX
 --cobalt-blue: #0244a1ff;
 --bluetiful: #0266f2ff;
 --dodger-blue: #4894feff;
+-- baby-blue-eyes: #adcfff;
 --white: #ffffffff;
 
 CSS HSL 
@@ -14,18 +15,24 @@ CSS HSL
 --white: hsla(0, 0%, 100%, 1);
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
 
+/*Note to self: Helvectica New Heavy*/
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  background-color: #0c0a09;
+}
+
 .App {
-  height: 100vh;
-  background-color:  #0a1128ff;
+  height: 100%;
+  /* background-color: white; */
+  background-color: #0c0a09; /* background-color: white; */
   text-align: center;
   /* color: white; */
 }

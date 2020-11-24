@@ -1,14 +1,19 @@
 import React from 'react'
+import Tool from '../components/Editor';
+import {Button, P, Page, PageContainer, Title} from './PageComponents.js'
 
 const Editor = () => {
     return (
-        <div style={{
-            display: 'flex', 
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '90vh'
-            }}>
-            <h1>Appointment Editor</h1>
+        <div>
+            <PageContainer>
+                <Page>
+                    <Title>Appointment Editor Tool</Title>
+                    <Button>Retrieval Code?</Button>
+                </Page>
+            </PageContainer>
+            <div>
+                <Tool />
+            </div>
         </div>
     )
 }

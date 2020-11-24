@@ -1,18 +1,15 @@
 // Import library into a variable we can use to access library methods.
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker'; // for having app work offline
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker"; // for having app work offline
 
-
-// JSX object
 ReactDOM.render(
-  // User defined components start with uppercase letters.
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root') // target root div in index.html
+  document.getElementById("root") // target root div in index.html
 );
 
 // If you want your app to work offline and load faster, you can change
