@@ -25,14 +25,21 @@ CSS HSL
   padding: 0;
 }
 
-body {
-  background-color: #0c0a09;
+body, html {
+  height: 100%;
+
+}
+#root { 
+  height: 100%;
+  background: #0c0a09;
+
+}
+.bghelper {
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 79%, rgba(2,102,242,1) 100%);
 }
 
 .App {
   height: 100%;
-  /* background-color: white; */
-  background-color: #0c0a09; /* background-color: white; */
-  text-align: center;
-  /* color: white; */
+  margin: 0;
 }

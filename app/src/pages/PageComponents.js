@@ -1,24 +1,39 @@
 import styled from 'styled-components';
+import { FaTimes, FaCheck } from "react-icons/fa";
+
 
 export const Page = styled.div`
-    height: 100%;
-    background-color: #0c0a09;
+    /* height: 100%; */
     color: white;
-`
+    justify-content: center;
+    align-items: center;
+`;
+
 export const PageContainer = styled.div`
-    margin: px 75px;
-    /* background-color: #0c0a09; */
-`
+    /* margin: 0px 75px; */
+    background-color: #0c0a09;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+`;
 
 export const Title = styled.h1`
     flex-direction: 'column';
     padding: '10px';
     margin: 30px 5px 20px 5px;
-`
+`;
 
 export const P = styled.p`
     margin: 30px 40px;
-`
+`;
+
+export const Image = styled.img`
+  /* width: 50%; */
+  max-width: 300px;
+  max-height: 50%;
+  border-radius: 3px;
+`;
 
 export const Button = styled.button`
   font-family: "Roboto", sans-serif;
@@ -33,8 +48,4 @@ export const Button = styled.button`
   &:hover {
     background: #0244a1;
   }
-`
-
-export const TextWrapper = styled.div`
-
-`
+`;

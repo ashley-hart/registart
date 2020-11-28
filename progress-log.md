@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Registart Progress Log
 
 ### Week 0
@@ -34,4 +32,3 @@
 
 #### September 18th, 2020
 - TODO: Ensure that your documents for Deliverables 1 are in by 5:00PM.
->>>>>>> 8940c6b9ffecbe5d9806dcfdca366a70258efc77

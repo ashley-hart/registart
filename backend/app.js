@@ -21,9 +21,10 @@ mongoose.connect(
 
 const editorRouter = require('./routes/editor');
 const contactRouter = require('./routes/contact');
+const signInRouter = require('./routes/signin');
 app.use('/editor', editorRouter);
 app.use('/contact', contactRouter);
-
+app.use('/signin', signInRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

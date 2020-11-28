@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes, FaCheck } from "react-icons/fa";
 
 // Style our component and export it.
 export const Nav = styled.nav`
   background: #000;
   height: 80px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: space-between;
   padding: 0.5rem calc((100vx - 1000px) / 2);
   z-index: 10;
   position: sticky;
@@ -55,7 +57,7 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 20px;
 
   @media screen and (max-width: 768px) {
     display: none;

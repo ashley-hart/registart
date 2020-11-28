@@ -25,6 +25,12 @@ function ContactForm() {
     axios
       .post("http://localhost:5000/contact/add", cinfo)
       .then((res) => console.log(res.data)); // promise
+
+    alert(
+      "Your information has been recieved!"
+    );
+
+      window.location.reload();
   };
 
   return (

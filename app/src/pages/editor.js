@@ -1,21 +1,20 @@
-import React from 'react'
-import Tool from '../components/Editor';
-import {Button, P, Page, PageContainer, Title} from './PageComponents.js'
+import React from "react";
+import ApptCard from "../components/Other/ApptCard";
+import AppointmentList from "../components/Editor";
+import { Page, PageContainer, Title, P } from "./PageComponents.js";
 
 const Editor = () => {
-    return (
-        <div>
-            <PageContainer>
-                <Page>
-                    <Title>Appointment Editor Tool</Title>
-                    <Button>Retrieval Code?</Button>
-                </Page>
-            </PageContainer>
-            <div>
-                <Tool />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <Page>
+        <PageContainer>
+          <Title>Appointment Editor Tool</Title>
+          <P>Here are the appointments clients have made with you.</P>
+          <AppointmentList />
+        </PageContainer>
+      </Page>
+    </div>
+  );
+};
 
-export default Editor
+export default Editor;

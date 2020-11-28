@@ -9,7 +9,6 @@ const UserSchema = mongoose.Schema({
         type: String,
         trim: true
     }
-
 });
 
 module.exports = mongoose.model("User", UserSchema);

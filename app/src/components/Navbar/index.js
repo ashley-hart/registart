@@ -7,8 +7,11 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
-import SignIn from "../../pages/signin";
 import logo from "../../images/logo2.svg";
+import { FaBars } from "react-icons/fa";
+
+// TODO: Follow the tutorial below to implement the hamburger menu.
+// https://www.youtube.com/watch?v=fL8cFqhTHwA&t=185s&ab_channel=BrianDesign/
 
 const Navbar = () => {
   return (
@@ -17,7 +20,7 @@ const Navbar = () => {
         <NavLink to="/">
           <img src={logo} alt="Logo" />
         </NavLink>
-        <Bars />
+        <Bars /> {/*Hamburger Menu*/}
         <NavMenu>
           <NavLink to="/about" activeStyle>
             About
@@ -29,8 +32,11 @@ const Navbar = () => {
             Contact
           </NavLink>
         </NavMenu>
+        {/* <NavBtn>
+          <NavBtnLink to="/retcode">Enter Retrieval Code</NavBtnLink>
+        </NavBtn> */}
         <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
+        <NavBtnLink to="/signin">Sign In</NavBtnLink>
         </NavBtn>
       </Nav>
     </>

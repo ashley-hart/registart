@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {
@@ -10,6 +10,7 @@ import {
   H2,
   Label,
 } from "./FormElements";
+import { FaBars } from "react-icons/fa";
 
 const Form = () => {
   // Note: can add 'errors' to this object
@@ -36,6 +37,8 @@ const Form = () => {
       "IMPORTANT: Write down your retrieval code in case you want to make changes!\n" +
         appointment.code
     );
+
+    window.location.reload();
   };
 
   // Generates a retreival code and writes it to the code log.
@@ -53,9 +56,8 @@ const Form = () => {
 
   return (
     <>
-      <div>
+        <H2>Set an Appointment</H2>
         <FormWrapper>
-          <H2>Set an Appointment</H2>
           <FormContainer onSubmit={handleSubmit(onSubmit)}>
             <Label htmlFor="name">Name</Label>
             <TextFeild
@@ -105,7 +107,6 @@ const Form = () => {
             <SubmitButton type="submit">Submit</SubmitButton>
           </FormContainer>
         </FormWrapper>
-      </div>
     </>
   );
 };
