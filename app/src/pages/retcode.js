@@ -22,8 +22,7 @@ import {
 } from "../components/Editor/EditorElements";
 import "../components/Editor/Appointment";
 import { FaTimes, FaPen } from "react-icons/fa";
-import EditorForm from "../components/Editor/";
-import Appointment from "../components/Editor";
+import EditForm from "../components/Editor/EditorForm";
 
 const RetCode = () => {
   const { register, handleSubmit } = useForm();
@@ -67,7 +66,7 @@ const RetCode = () => {
 
       // Pass the entire appointment to the editor form.
       ReactDOM.render(
-        <EditorForm appt={target} />,
+        <EditForm appt={target} />,
         document.getElementById("formSpace")
       );
     } else {
@@ -110,7 +109,7 @@ const RetCode = () => {
       ReactDOM.render(
         <div>
           <ListContainer>
-            <P>Please note that your retrival code has not been changed.</P>
+            <P>Please note that your retrieval code has not been changed.</P>
             <CardDiv>
               <Info>
                 <List>
@@ -124,11 +123,15 @@ const RetCode = () => {
                   </li>
                   <li>
                     <b>Date: </b>
-                    {target.date}
+                    {new Date(target.date).toDateString()}
                   </li>
                   <li>
                     <b>Time: </b>
                     {target.time}
+                  </li>
+                  <li>
+                    <b>Phone #:</b>
+                    {target.phoneNumber}
                   </li>
                   <li>
                     <b>Appointment Type: </b>
@@ -184,8 +187,8 @@ const RetCode = () => {
             <SubmitButton>Retrieve!</SubmitButton>
           </FormContainer>
         </FormWrapper>
-        <div id="result"></div>
         <div id="formSpace"></div>
+        <div id="result"></div>
       </PageContainer>
     </Page>
   );

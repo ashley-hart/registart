@@ -22,6 +22,7 @@ const Form = () => {
       email: data.email,
       date: data.date,
       time: data.time,
+      phoneNumber: data.phoneNumber,
       apptType: data.apptType,
       notes: data.notes,
       code: generateRetCode(data),
@@ -86,6 +87,15 @@ const Form = () => {
               step="3600"
               min="9:00"
               max="18:00"
+              ref={register({ required: true })}
+            />
+
+            <Label htmlFor="phoneNumber">Phone Number</Label>
+            <TextFeild
+              type="tel"
+              name="phoneNumber"
+              defaultValue="000-000-0000"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               ref={register({ required: true })}
             />
 

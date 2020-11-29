@@ -25,6 +25,7 @@ const EditForm = (props) => {
       email: data.email,
       date: data.date,
       time: data.time,
+      phoneNumber: data.phoneNumber,
       apptType: data.apptType,
       notes: data.notes,
       code: props.appt.retCode,
@@ -35,7 +36,10 @@ const EditForm = (props) => {
     console.log("http://localhost:5000/update/" + props.appt._id);
 
     axios
-      .post(("http://localhost:5000/editor/update/" + props.appt._id), appointment)
+      .post(
+        "http://localhost:5000/editor/update/" + props.appt._id,
+        appointment
+      )
       .then((res) => console.log(res.data));
 
     alert(
@@ -43,7 +47,7 @@ const EditForm = (props) => {
         appointment.code
     );
 
-    // window.location.reload();
+    window.location.reload();
   };
 
   return (
@@ -79,6 +83,15 @@ const EditForm = (props) => {
             step="3600"
             min="9:00"
             max="18:00"
+            ref={register({ required: true })}
+          />
+
+          <Label htmlFor="phoneNumber">Phone Number</Label>
+          <TextFeild
+            type="tel"
+            name="phoneNumber"
+            value="###-###-####"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             ref={register({ required: true })}
           />
 

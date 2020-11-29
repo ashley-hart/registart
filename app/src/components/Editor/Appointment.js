@@ -48,7 +48,10 @@ function Appointment(props) {
 
   };
 
-  const displayAppointments = (props) => {
+  const displayAppointments = () => {
+    let date = Date(props.appt.date);
+    console.log(date);
+
     if (props.length !== 0) {
       return (
         <div>
@@ -65,11 +68,15 @@ function Appointment(props) {
                 </li>
                 <li>
                   <b>Date: </b>
-                  {props.appt.date}
+                  {new Date(props.appt.date).toDateString()}
                 </li>
                 <li>
                   <b>Time: </b>
                   {props.appt.time}
+                </li>
+                <li>
+                  <b>Phone #: </b>
+                  {props.appt.phoneNumber}
                 </li>
                 <li>
                   <b>Appointment Type: </b>
@@ -97,7 +104,7 @@ function Appointment(props) {
     }
   };
 
-  return <><div id="formSpace"></div><div>{displayAppointments(props)}</div></>;
+  return <><div id="formSpace"></div><div>{displayAppointments()}</div></>;
 }
 
 export default Appointment;

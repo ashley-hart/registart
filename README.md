@@ -18,5 +18,5 @@ filling the appointment form.
 - The user can access the edit/delete menu of the appointment by specifying their last name and appointment ID.
 - The site owner’s account should be predefined in the system.
 - When the site owner logs into the system with a username and password, they can see all the appointments.
-- The appointments can be listed daily, hourly, or weekly and the site owner can delete the appointments within the 48 hours of the appointment.
+- ~~The appointments can be listed daily, hourly, or weekly and the site owner can delete the appointments within the 48 hours of the appointment.~~
 - This system can be used by anyone including doctors, dentists, and so on.

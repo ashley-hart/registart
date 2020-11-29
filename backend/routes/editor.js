@@ -16,6 +16,7 @@ router.route("/add").post((req, res) => {
     email: req.body.email,
     date: req.body.date,
     time: req.body.time,
+    phoneNumber: req.body.phoneNumber,
     apptType: req.body.apptType,
     notes: req.body.notes,
     retCode: req.body.code,
@@ -87,6 +88,7 @@ router.route("/update/:id").post((req, res) => {
     appt.email = req.body.email;
     appt.data = req.body.date;
     appt.time = req.body.time;
+    appt.phoneNumber = req.body.phoneNumber;
     appt.apptType = req.body.apptType;
     appt.notes = req.body.notes;
 
