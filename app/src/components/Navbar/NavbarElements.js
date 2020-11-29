@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import { FaBars, FaTimes, FaCheck } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 // Style our component and export it.
 export const Nav = styled.nav`

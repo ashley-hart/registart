@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { FaTimes, FaCheck } from "react-icons/fa";
-
 
 export const Page = styled.div`
     /* height: 100%; */

@@ -79,5 +79,4 @@ function App() {
   );
 }
 
-// Export this file.
 export default App;

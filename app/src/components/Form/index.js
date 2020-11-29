@@ -10,7 +10,6 @@ import {
   H2,
   Label,
 } from "./FormElements";
-import { FaBars } from "react-icons/fa";
 
 const Form = () => {
   // Note: can add 'errors' to this object

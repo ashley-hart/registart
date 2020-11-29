@@ -1,6 +1,6 @@
 import React from "react";
 import { P, Page, PageContainer, Title, Image } from "./PageComponents.js";
-import picture from "../images/meagain.jpg";
+import picture from "../images/aboutmepic.jpg";
 
 const About = () => {
   return (

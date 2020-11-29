@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "../components/Form";
 import { P, Page, PageContainer, Title } from "./PageComponents.js";
-// import { FaCentercode } from 'react-icons/fa'
 
 const Home = () => {
   return (
@@ -14,6 +13,9 @@ const Home = () => {
             following form to set an appointment with me. I am looking forward
             to getting in touch!
           </P>
+          {/* <P>if you have a retrieval code, click the button below!</P>
+          <Button onClick="document.location = http://localhost:3000/retcode/">Do you have a code?</Button>
+          <P></P> */}
           <Form />
         </PageContainer>
       </Page>

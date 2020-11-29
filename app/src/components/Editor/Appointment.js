@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+import ReactDOM from 'react-dom';
 import {
   CardDiv,
   Info,
@@ -6,62 +7,97 @@ import {
   ButtonDiv,
   DeleteButton,
   AcceptButton,
+  List,
 } from "./EditorElements";
-import { FaTimes, FaCheck } from "react-icons/fa";
-
-
-// TODO: Add delete functionality!
-// TODO: Add edit functioanlity!
+import { FaTimes, FaPen } from "react-icons/fa";
+import axios from "axios";
+import EditorForm from "./EditorForm";
 
 function Appointment(props) {
-
-
   console.log("Appointment module recieved:");
   console.log(props.appt);
 
-  const displayAppointments = (props) => {
-    const { appointments } = props;
+  const deleteAppointment = () => {
+    const id = props.appt._id;
+    console.log("Delete appointment recieved: ");
+    console.log(id);
 
-    if (props !== null) {
-        return(
-            // props.map((appt, index) => {
-            // console.log(appt);
-            // return (
-                <div>
-                <CardDiv>
-                  <Info>
-                    <ul>
-                      <li>{props.appt.name}</li>
-                      <li>{props.appt.email}</li>
-                      <li>{props.appt.date}</li>
-                      <li>{props.appt.time}</li>
-                      <li>{props.appt.apptType}</li>
-                      <li>{props.appt.notes}</li>
-                    </ul>
-                  </Info>
-                  <ButtonDiv>
-                    <DeleteButton onClick={console.log("Delete button clicked!")}>
-                      <FaTimes />
-                    </DeleteButton>
-                    <AcceptButton>
-                      <FaCheck />
-                    </AcceptButton>
-                  </ButtonDiv>
-                </CardDiv>
-              </div>
-        //     )
-        // })
-        )} else {
-            return (<P>Whoops! No appointments scheduled yet.</P>)
+    if(window.confirm("Do you want to delete this appointment?") === true){
+      axios
+        .delete("http://localhost:5000/editor/" + id)
+        .then((res) => console.log(res.data));
+        window.location.reload();
+    } else {
+      console.log("Opted out of page reload.");
     }
   };
 
-  return (
-      <>
-      {displayAppointments(props)}
-      </>
-    
-  );
+  // Idea: Render in a form that will take in new data and change what is present on the screen.
+  const updateAppointment = () => {
+    console.log("updateAppointment received:");
+    console.log(props.appt);
+
+    if(window.confirm("Do you want to update this appointment?") === true){
+      console.log("Updating appointment entry!");
+
+      // Pass the entire appointment to the editor form.
+      ReactDOM.render(<EditorForm appt={props.appt}/>, document.getElementById("formSpace"));
+    } else {
+      console.log("Opted out of page reload.");
+    }
+
+  };
+
+  const displayAppointments = (props) => {
+    if (props.length !== 0) {
+      return (
+        <div>
+          <CardDiv>
+            <Info>
+              <List>
+                <li>
+                  <b>Name: </b>
+                  {props.appt.name}
+                </li>
+                <li>
+                  <b>E-mail: </b>
+                  {props.appt.email}
+                </li>
+                <li>
+                  <b>Date: </b>
+                  {props.appt.date}
+                </li>
+                <li>
+                  <b>Time: </b>
+                  {props.appt.time}
+                </li>
+                <li>
+                  <b>Appointment Type: </b>
+                  {props.appt.apptType}
+                </li>
+                <li>
+                  <b>Notes: </b>
+                  {props.appt.notes}
+                </li>
+              </List>
+            </Info>
+            <ButtonDiv>
+              <DeleteButton onClick={deleteAppointment}>
+                <FaTimes />
+              </DeleteButton>
+              <AcceptButton onClick={updateAppointment}>
+                <FaPen />
+              </AcceptButton>
+            </ButtonDiv>
+          </CardDiv>
+        </div>
+      );
+    } else {
+      return <P>Whoops! No appointments scheduled yet.</P>;
+    }
+  };
+
+  return <><div id="formSpace"></div><div>{displayAppointments(props)}</div></>;
 }
 
 export default Appointment;

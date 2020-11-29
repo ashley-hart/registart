@@ -14,20 +14,26 @@ import {
 const SignIn = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
-    // console.log(data);
+  const onSubmit = async (data) => {
 
     const user = {
       username: data.username,
       password: data.password,
     };
 
-    axios
-      .post("http://localhost:5000/signin/login", user)
-      .then((res) => console.log(res.data)); // promise
+    let token = "";
 
-    // window.location.reload();
-  };
+    await axios
+      .post("http://localhost:5000/signin/login", user)
+      .then((res) => {
+        console.log(res.data);
+        token = res.data.token;
+      }); // promise
+
+      console.log("Got token: " + token);
+      localStorage.setItem("auth-token", token);
+    window.location = "http://localhost:3000/editor/"
+    };
 
   return (
     <Page>
