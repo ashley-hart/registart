@@ -1,0 +1,31 @@
+{
+  "name": "registart",
+  "version": "1.0.0",
+  "description": "Appointment manager",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "json-server": "^0.16.2",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd app && npm run build",
+    "install-client": "npm run && npm start",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "cd backend && npm start",
+    "client": "cd app && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashley-hart/registart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashley-hart/registart/issues"
+  },
+  "homepage": "https://github.com/ashley-hart/registart#readme"
+}
