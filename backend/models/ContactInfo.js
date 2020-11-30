@@ -6,7 +6,7 @@ const ContactSchema = mongoose.Schema(
       type: String,
       trim: true,
     },
-    date: {
+    email: {
       type: String,
       trim: true,
     },

@@ -11,33 +11,31 @@ import {
 } from "./FormElements";
 
 function ContactForm() {
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
 
-    const cinfo = {
+    const contactInfo = {
       name: data.name,
       email: data.email,
       notes: data.notes,
     };
 
     axios
-      .post("http://localhost:5000/contact/add", cinfo)
+      .post("http://localhost:5000/contact/add", contactInfo)
       .then((res) => console.log(res.data)); // promise
 
-    alert(
-      "Your information has been recieved!"
-    );
+    alert("Your information has been recieved!");
 
-      window.location.reload();
+    window.location.reload();
   };
 
   return (
     <>
       <FormWrapper>
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">Full Name</Label>
           <TextFeild
             type="text"
             name="name"

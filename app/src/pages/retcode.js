@@ -77,7 +77,7 @@ const RetCode = () => {
   const onSubmit = async (data) => {
     console.log("Submitted!");
     console.log(data.retCode);
-    const info = { code: data.retCode, name: data.name };
+    const info = { code: data.retCode, name: data.lastName };
     let target = undefined;
     console.log(info);
 
@@ -89,10 +89,10 @@ const RetCode = () => {
     console.log("appointment length = " + arrayLen);
 
     for (let i = 0; i < appointments.length; i++) {
-      console.log(appointments[i].name);
+      console.log(appointments[i].lastName);
       console.log(appointments[i].retCode);
       if (
-        appointments[i].name === data.name &&
+        appointments[i].lastName === data.lastName &&
         appointments[i].retCode === data.retCode
       ) {
         target = appointments[i];
@@ -114,8 +114,12 @@ const RetCode = () => {
               <Info>
                 <List>
                   <li>
-                    <b>Name: </b>
-                    {target.name}
+                    <b>First Name: </b>
+                    {target.firstName}
+                  </li>
+                  <li>
+                    <b>Last Name: </b>
+                    {target.lastName}
                   </li>
                   <li>
                     <b>E-mail: </b>
@@ -171,10 +175,10 @@ const RetCode = () => {
         <H2>Enter your code below!</H2>
         <FormWrapper>
           <FormContainer onSubmit={handleSubmit(onSubmit)}>
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="lastName">Last Name</Label>
             <TextFeild
               type="text"
-              name="name"
+              name="lastName"
               ref={register({ required: true })}
             />
 

@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 //   const currentDate = new Date();
 // }
 
-
 // Check if our data is in a 48 hour window.
 // function canBeModified(candidate) {
 //   console.log(candidate);
@@ -16,13 +15,16 @@ const mongoose = require("mongoose");
 //   console.log("Schema Date: " + (new Date(schemaDate).toDateString()));
 //   console.log("Current date: " + (new Date(currentDate).toDateString()));
 //   return true;
-
 // }
 
-// TODO: Update this to keep it consistent with the form data.
 const ApptSchema = mongoose.Schema(
   {
-    name: {
+    firstName: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    lastName: {
       type: String,
       trim: true,
       required: true,
@@ -36,7 +38,7 @@ const ApptSchema = mongoose.Schema(
       type: String,
       trim: true,
       required: true,
-      min: Date.now(),
+      // min: Date.now(),
       // validate: canBeModified(),
     },
     time: {

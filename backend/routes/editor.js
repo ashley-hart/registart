@@ -12,17 +12,18 @@ router.route("/").get((req, res) => {
 // TODO: Add conflict checking for new submissions.
 router.route("/add").post((req, res) => {
   const newAppt = new Appointment({
-    name: req.body.name,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
     date: req.body.date,
     time: req.body.time,
     phoneNumber: req.body.phoneNumber,
     apptType: req.body.apptType,
     notes: req.body.notes,
-    retCode: req.body.code,
+    retCode: req.body.retCode,
   });
 
-  console.log("Client name: " + newAppt.name);
+  console.log("Client name: " + newAppt.firstName + " " + newAppt.lastName);
   console.log("Adding: " + newAppt);
 
   newAppt
@@ -84,7 +85,8 @@ router.route("/update/:id").post((req, res) => {
   // TODO: Fix so we cannot update within 48 hours of the appt time.
   // Update every feild except for the retrival code.
   Appointment.findById(req.params.id).then((appt) => {
-    appt.name = req.body.name;
+    appt.firstName = req.body.firstName;
+    appt.lastName = req.body.lastName;
     appt.email = req.body.email;
     appt.data = req.body.date;
     appt.time = req.body.time;

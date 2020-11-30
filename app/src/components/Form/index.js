@@ -18,14 +18,15 @@ const Form = () => {
   // Add form input to the database.
   const onSubmit = (data) => {
     const appointment = {
-      name: data.name,
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
       date: data.date,
       time: data.time,
       phoneNumber: data.phoneNumber,
       apptType: data.apptType,
       notes: data.notes,
-      code: generateRetCode(data),
+      retCode: generateRetCode(data),
     };
 
     console.log("Posting: " + JSON.stringify(appointment));
@@ -35,7 +36,7 @@ const Form = () => {
 
     alert(
       "IMPORTANT: Write down your retrieval code in case you want to make changes!\n" +
-        appointment.code
+        appointment.retCode
     );
 
     window.location.reload();
@@ -44,7 +45,7 @@ const Form = () => {
   // Generates a retreival code and writes it to the code log.
   const generateRetCode = (data) => {
     var code =
-      data.name.substring(0, 1) +
+      data.firstName.substring(0, 1) +
       data.email.substring(0, 4) +
       data.date.substring(5, 9);
     var num = Math.floor(Math.random() * 100 + 1);
@@ -59,12 +60,19 @@ const Form = () => {
         <H2>Set an Appointment</H2>
         <FormWrapper>
           <FormContainer onSubmit={handleSubmit(onSubmit)}>
-            <Label htmlFor="name">Name</Label>
-            <TextFeild
-              type="text"
-              name="name"
-              ref={register({ required: true })}
-            />
+          <Label htmlFor="firstName">First Name</Label>
+          <TextFeild
+            type="text"
+            name="firstName"
+            ref={register({ required: true })}
+          />
+
+          <Label htmlFor="lastName">Last Name</Label>
+          <TextFeild
+            type="text"
+            name="lastName"
+            ref={register({ required: true })}
+          />
 
             <Label htmlFor="email">E-mail</Label>
             <TextFeild
@@ -95,7 +103,7 @@ const Form = () => {
               type="tel"
               name="phoneNumber"
               defaultValue="000-000-0000"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               ref={register({ required: true })}
             />
 

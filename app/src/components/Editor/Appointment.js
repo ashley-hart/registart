@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import {
   CardDiv,
   Info,
@@ -22,11 +22,11 @@ function Appointment(props) {
     console.log("Delete appointment recieved: ");
     console.log(id);
 
-    if(window.confirm("Do you want to delete this appointment?") === true){
+    if (window.confirm("Do you want to delete this appointment?") === true) {
       axios
         .delete("http://localhost:5000/editor/" + id)
         .then((res) => console.log(res.data));
-        window.location.reload();
+      window.location.reload();
     } else {
       console.log("Opted out of page reload.");
     }
@@ -37,15 +37,17 @@ function Appointment(props) {
     console.log("updateAppointment received:");
     console.log(props.appt);
 
-    if(window.confirm("Do you want to update this appointment?") === true){
+    if (window.confirm("Do you want to update this appointment?") === true) {
       console.log("Updating appointment entry!");
 
       // Pass the entire appointment to the editor form.
-      ReactDOM.render(<EditorForm appt={props.appt}/>, document.getElementById("formSpace"));
+      ReactDOM.render(
+        <EditorForm appt={props.appt} />,
+        document.getElementById("formSpace")
+      );
     } else {
       console.log("Opted out of page reload.");
     }
-
   };
 
   const displayAppointments = () => {
@@ -59,8 +61,12 @@ function Appointment(props) {
             <Info>
               <List>
                 <li>
-                  <b>Name: </b>
-                  {props.appt.name}
+                  <b>First Name: </b>
+                  {props.appt.firstName}
+                </li>
+                <li>
+                  <b>Last Name: </b>
+                  {props.appt.lastName}
                 </li>
                 <li>
                   <b>E-mail: </b>
@@ -75,7 +81,7 @@ function Appointment(props) {
                   {props.appt.time}
                 </li>
                 <li>
-                  <b>Phone #: </b>
+                  <b>Phone #:  </b>
                   {props.appt.phoneNumber}
                 </li>
                 <li>
@@ -104,7 +110,12 @@ function Appointment(props) {
     }
   };
 
-  return <><div id="formSpace"></div><div>{displayAppointments()}</div></>;
+  return (
+    <>
+      <div id="formSpace"></div>
+      <div>{displayAppointments()}</div>
+    </>
+  );
 }
 
 export default Appointment;

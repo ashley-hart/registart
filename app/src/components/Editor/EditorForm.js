@@ -21,7 +21,8 @@ const EditForm = (props) => {
   const onSubmit = (data) => {
     // Take new appointment data and prepare it to be sent to the DB.
     const appointment = {
-      name: data.name,
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
       date: data.date,
       time: data.time,
@@ -55,10 +56,17 @@ const EditForm = (props) => {
       <H2>Enter Your Updated Information!</H2>
       <FormWrapper>
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="firstName">First Name</Label>
           <TextFeild
             type="text"
-            name="name"
+            name="firstName"
+            ref={register({ required: true })}
+          />
+
+          <Label htmlFor="lastName">Last Name</Label>
+          <TextFeild
+            type="text"
+            name="lastName"
             ref={register({ required: true })}
           />
 
@@ -90,8 +98,8 @@ const EditForm = (props) => {
           <TextFeild
             type="tel"
             name="phoneNumber"
-            value="###-###-####"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            defaultValue="000-000-0000"
+            // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             ref={register({ required: true })}
           />
 

@@ -25,7 +25,7 @@ router.route("/login").post(async (req, res) => {
 
     // Check if the two passwords match
     const isMatch = user.password == password;
-    console.log("isMatch: " + isMatch);
+    // console.log("isMatch: " + isMatch);
     if (!isMatch)
       return res.status(400).json({ msg: "Invalid login credentials." });
 
@@ -53,7 +53,7 @@ router.post("/tokenIsValid", async (req, res) => {
     const token = req.header("x-auth-token");
     if (!token) return res.json(false);
 
-    console.log("Verified = " + jwt.verify(token, process.env.JWT_SECRET));
+    // console.log("Verified = " + jwt.verify(token, process.env.JWT_SECRET));
     // Is our token verified?
     const verified = jwt.verify(token, process.env.JWT_SECRET);
     if (!verified) return res.json(false);
@@ -78,41 +78,3 @@ router.get("/loggedin", auth, async (req, res) => {
 });
 
 module.exports = router;
-
-// const userInfo = new User({
-//   username: username,
-//   password: password,
-// });
-
-// await userInfo
-//   .save()
-//   .then(() => res.json("User added!"))
-//   .catch((err) => res.status(400).json("Error: " + err));
-
-/*
-router.route("/login").post(async (req, res) => {
-    try {
-      const { username, password } = req.body;
-  
-      const existingUser = await User.findOne({
-        username: username,
-      }).catch((err) => res.status(500).json("Error: " + err.message));
-  
-      if (existingUser) {
-        console.log("Success! Admin credentials detected!");
-        return res.status(200).json({
-          msg:
-            "Welcome admin! The account provided is already predefined in the system.",
-        });
-      } else {
-        console.log("Error: Admin credentials not detected.");
-        return res
-          .status(400)
-          .json({
-            msg: "Admin credentials not provided. Terminating access procedure.",
-        });
-      }
-    } catch (err) {
-      res.status(500).json(err.message);
-    }
-  });*/
