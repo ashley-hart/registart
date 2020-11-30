@@ -1,8 +1,5 @@
-# registart
-Appointment manager
-
-
 # Registart
+Appointment Manager
 COP 4331, Fall 2020
 
 ### Software Requirements:
